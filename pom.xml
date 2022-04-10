@@ -33,6 +33,7 @@
         </dependency>
     </dependencies>
 
+    <!--环境设置 -springboot：@profile.active@ environment-->
     <profiles>
         <profile>
             <id>dev_env</id>
