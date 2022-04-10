@@ -1,0 +1,88 @@
+#多环境开发
+spring:
+  profiles:
+    # 当前环境
+    active: pro
+
+#-----通用环境---------------------------------------------------------
+
+  # 导入jdbc.properties文件
+  config:
+    import: classpath:jdbc.properties
+
+
+  #spring-mvc配置
+  mvc:
+    # 视图解析器
+    view:
+      prefix:
+      suffix: .html
+
+# mybatis配置
+#mybatis:
+# mybatis 映射文件位置，string数组
+# mapper-locations: mapper/StudentMapper.xml
+# mybatis导入配置文件
+# config-location: mybatis-config.xml
+
+# mybatis-plus配置
+#mybatis-plus:
+# mybatis-plus 映射文件位置，string数组,默认mapper/**/*.xml
+# mapper-locations: mapper/**/*.xml
+# mybatis-plus导入配置文件
+# config-location: mybatis-config.xml
+
+
+#server:
+  #配置端口号
+  #port: 8080
+  # 配置上下文路径
+  # servlet:
+  #  context-path:
+
+
+
+
+---
+#------生产环境--------------------------------------------------------
+
+spring:
+  config:
+    activate:
+      on-profile: pro
+
+  # 配置数据源
+  datasource:
+    # driver-class-name: ${jdbc.driver}
+    # url: ${jdbc.url}
+    # username: ${jdbc.username}
+    # password: ${jdbc.password}
+    # 配置数据源-druid
+    druid:
+      driver-class-name: ${jdbc.driver}
+      url: ${jdbc.url}
+      username: ${jdbc.username}
+      password: ${jdbc.password}
+
+
+---
+#----开发环境----------------------------------------------------
+
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+
+
+
+
+---
+#----测试环境-----------------------------------------------------
+
+spring:
+  config:
+    activate:
+      on-profile: test
+

@@ -1,0 +1,11 @@
+#多环境开发
+spring:
+  profiles:
+    active: test
+
+#通用环境
+
+server:
+  servlet:
+    context-path: /hello
+

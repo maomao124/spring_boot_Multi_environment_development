@@ -1,0 +1,9 @@
+spring:
+  group:
+    "dev": devDB,devRedis,devMVC
+    "pro": proDB,proRedis,proMVC
+    "test": testDB,testRedis,testMVC
+  config:
+    activate:
+      on-profile: dev
+

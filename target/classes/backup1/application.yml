@@ -1,0 +1,48 @@
+#多环境开发
+spring:
+  profiles:
+    active: pro
+
+#通用环境
+
+server:
+  servlet:
+    context-path: /hello
+
+
+
+---
+#生产环境
+
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 8081
+
+
+
+---
+#开发环境
+
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+server:
+  port: 8082
+
+
+
+---
+#测试环境
+
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 8083
