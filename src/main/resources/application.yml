@@ -2,7 +2,7 @@
 spring:
   profiles:
     # 当前环境
-    active: pro
+    active: @profile.active@
 
 #-----通用环境---------------------------------------------------------
 
